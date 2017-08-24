@@ -31,6 +31,8 @@ const uploader = multer({
 })
 
 module.exports = (app) => {
+  router.post('/users/register', controllers.users.register)
+  router.post('/users/login', controllers.users.login)
 
   router.all('*', (req, res) => {
     res.status(404).json({success: false, msg: '404 Not Found!'})
