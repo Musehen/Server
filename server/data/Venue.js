@@ -40,7 +40,7 @@ let venueSchema = mongoose.Schema({
   ],
   owner: { type: mongoose.Schema.Types.String, ref: 'User', required: REQUIRED_VALIDATION_MESSAGE },
   moderators: [{ type: mongoose.Schema.Types.String, ref: 'User', required: REQUIRED_VALIDATION_MESSAGE, unique: true}],
-  isVisible: { type: mongoose.Schema.Types.Boolean, required: REQUIRED_VALIDATION_MESSAGE, default: true }
+  isVisible: { type: mongoose.Schema.Types.Boolean, required: REQUIRED_VALIDATION_MESSAGE, default: false }
 }, { timestamps: true })
 
 let Venue = mongoose.model('Venue', venueSchema)
